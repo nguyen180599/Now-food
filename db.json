@@ -1,0 +1,18 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "username": "nguyen",
+      "password": "nguyen",
+      "firstName": "Phạm",
+      "lastName": "Nguyên"
+    },
+    {
+      "id": 2,
+      "username": "nguyen1",
+      "password": "nguyen",
+      "firstName": "Phạm Xuân",
+      "lastName": "Nguyên"
+    }
+  ]
+}

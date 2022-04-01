@@ -1,0 +1,57 @@
+<div class="h-[100vh] flex items-center justify-center">
+  <div class="w-[400px] h-[500px] bg-amber-50 rounded-2xl
+  shadow-[2px_2px_20px_#3291ab,-2px_-2px_20px_#3291ab]"
+  >
+    <h2 class="font-bold text-blue-800 text-3xl flex justify-center m-5">Login</h2>
+    <form [formGroup]="loginForm"
+          (ngSubmit)="onSubmit()"
+          class="flex flex-col justify-center"
+    >
+      <div class="flex justify-around mt-[20px] mb-[15px]">
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username"
+               autocomplete="off"
+               class="p-2 pb-0 bg-transparent border-b-2 border-b-blue-900 duration-300
+               focus:border-b-blue-400 focus:outline-none"
+        />
+
+      </div>
+      <div *ngIf="submitted && formControl.username.errors"
+           class="text-rose-600 ml-[120px]">
+        <div *ngIf="formControl.username.errors?.required">
+          Username is required
+        </div>
+      </div>
+      <div class="flex justify-around">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password"
+               autocomplete="off"
+               class="p-2 pb-0 bg-transparent border-b-2 border-b-blue-900 duration-500
+               focus:border-b-blue-400 focus:outline-none"
+        />
+      </div>
+      <div *ngIf="submitted && formControl.password.errors"
+           class="text-rose-600 ml-[120px]">
+        <div *ngIf="formControl.password.errors?.required">
+          Password is required
+        </div>
+      </div>
+      <div class="flex justify-center mt-[40px]">
+        <button
+          class="p-[10px_25px] mr-[20px] font-bold text-white bg-cyan-500
+          rounded-md hover:bg-cyan-400 active:bg-cyan-600"
+        >
+<!--          <span *ngIf="loading" class="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24"></span>-->
+          Login
+        </button>
+        <a routerLink="/auth/register"
+           class="p-[10px_25px] mr-[20px] font-bold text-white bg-teal-500
+           rounded-md hover:bg-teal-400 active:bg-teal-600"
+        >
+          Register
+        </a>
+      </div>
+    </form>
+  </div>
+
+</div>
