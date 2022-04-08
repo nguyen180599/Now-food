@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   loading = false;
   formControl: any;
   listUser!: User[];
+  currentUser!: User;
 
   constructor(
     private fb: FormBuilder,
@@ -24,8 +25,8 @@ export class LoginComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {
     if (localStorage.getItem('User') !== null) {
-    this.router.navigate(['/'])
-  }
+      this.router.navigate(['/'])
+    }
   }
 
   ngOnInit(): void {
@@ -51,16 +52,22 @@ export class LoginComponent implements OnInit {
     const username = this.formControl.username.value;
     const password = this.formControl.password.value;
     const userCheck = this.listUser.some((res) => {
+      if (res.password === password && res.username === username) {
+        this.currentUser = res;
+      }
       return res.password === password && res.username === username
     })
-    if(userCheck) {
-      this.router.navigate(['']).then(r => {});
+    if (userCheck) {
+      this.router.navigate(['']).then(r => {
+      });
       // @ts-ignore
       const store = JSON.parse(localStorage.getItem('User')) ?? {};
       store['username'] = username;
       store['password'] = password;
-      localStorage.setItem('User', JSON.stringify(store));
+      store['firstName'] = this.currentUser.firstName;
+      store['lastName'] = this.currentUser.lastName;
       console.log('nguyen')
+      localStorage.setItem('User', JSON.stringify(store));
     } else {
       alert('cay the nho')
     }

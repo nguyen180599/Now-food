@@ -14,5 +14,94 @@
       "firstName": "Phạm Xuân",
       "lastName": "Nguyên"
     }
+  ],
+  "district": [
+    {
+      "id": 1,
+      "name": "Hà Nội",
+      "address": 1231
+    },
+    {
+      "id": 2,
+      "name": "Hồ Chí Minh",
+      "address": 234234
+    },
+    {
+      "id": 3,
+      "name": "Đà Nẵng",
+      "address": 123134234
+    }
+  ],
+  "categories": [
+    {
+      "id": 0,
+      "name": "All",
+      "show": true
+    },
+    {
+      "id": 1,
+      "name": "Đồ ăn",
+      "show": true
+    },
+    {
+      "id": 2,
+      "name": "Đồ Uống",
+      "show": false
+    },
+    {
+      "id": 3,
+      "name": "Đồ chay",
+      "show": false
+    },
+    {
+      "id": 4,
+      "name": "Bánh kem",
+      "show": true
+    },
+    {
+      "id": 5,
+      "name": "Tráng miệng",
+      "show": true
+    },
+    {
+      "id": 6,
+      "name": "Homemade",
+      "show": false
+    },
+    {
+      "id": 7,
+      "name": "Vỉa hè",
+      "show": true
+    },
+    {
+      "id": 8,
+      "name": "Pizza/Burger",
+      "show": false
+    },
+    {
+      "id": 9,
+      "name": "Món gà",
+      "show": true
+    },
+    {
+      "id": 10,
+      "name": "Món lẩu",
+      "show": true
+    },
+    {
+      "id": 11,
+      "name": "Sushi",
+      "show": true
+    },
+    {
+      "id": 12,
+      "name": "Mì phở",
+      "show": true
+    },
+    {
+      "id": 13,
+      "name": "Cơm ",
+      "show": true
+    }
   ]
 }

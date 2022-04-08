@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
   {
     path: 'pages',
-    loadChildren: () => import('./layout/pages/pages.module').then(m => m.PagesModule)
+    loadChildren: () => import('./views/pages/pages.module').then(m => m.PagesModule)
   },
   {
     path: 'auth',
