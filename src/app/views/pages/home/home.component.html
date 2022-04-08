@@ -1,0 +1,113 @@
+<div [ngStyle]="{'min-height.px': menuHeight}">
+  <div class="w-[100%] h-[calc(100vh-70px)] brightness-50 sticky overflow-hidden
+       bg-cover top-[70px] bg-no-repeat bg-center"
+       style="background-image: url('../../../../assets/background.jpg');"
+  ></div>
+  <div class="absolute top-0 w-[1200px] left-[calc(50%-600px)] pl-[20px] flex justify-between">
+
+    <div class="sticky top-[70px] h-[calc(100vh-70px)] flex items-center w-[470px]">
+      <div class="w-full">
+
+        <h2 class="text-white font-bold text-[24px] mb-[5px]">
+          Đặt đồ ăn, giao hàng từ 20'...
+        </h2>
+        <p class="text-white text-sm ">
+          Có {{currentDistrict?.address}} tại {{currentDistrict?.name}} từ 06:00 - 22:00
+        </p>
+        <div class="flex relative m-[27px_0_40px_0]">
+          <input class="px-[10px] h-[50px] w-full pr-[75px] rounded-[6px_10px_10px_6px] bg-white
+                   placeholder-gray-600 focus:outline-0"
+                 placeholder="Tìm địa điểm, món ăn, địa chỉ..."
+                 type="text"
+          >
+          <a class="absolute top-0 right-0 h-full w-[70px] flex items-center justify-center
+               bg-[#0288d1] rounded-[0_6px_6px_0] active:bg-[#007cbf] hover:brightness-90"
+             routerLink="">
+            <img src="https://img.icons8.com/glyph-neue/25/ffffff/search--v1.png"/>
+          </a>
+        </div>
+        <div>
+          <a *ngFor="let item of listCategory"
+             class="m-[0_15px_15px_0] inline-block"
+             routerLink=""
+          >
+              <span class="text-white p-[7px_21px] rounded-[6px] border border-white transition duration-300
+                    hover:bg-white hover:text-[#252525] inline-block whitespace-nowrap"
+                    title="{{item.name}}"
+              >
+                {{item.name}}
+              </span>
+          </a>
+        </div>
+        <div class="text-white text-[18px] mt-[16px] mb-[8px]">
+          Sử dụng App của Nguyên để có nhiều giảm giá
+          <br>
+          và trải nghiệm tốt hơn.
+        </div>
+        <div>
+          <a href="">
+            <!--            <span class="w-[219px] h-[68px]"-->
+            <!--                  style="background:url('../../../../assets/bg-icon.png'); background-position: -422px -387px;"-->
+            <!--            ></span>-->
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <div #viewheight class="w-[670px] py-[40px]">
+      <div>
+        <div class="bg-white p-[14px_17px_14px_40px] flex items-center rounded-[4px] justify-between cursor-pointer"
+             routerLink=""
+        >
+          <a class="flex items-center">
+            <span class="font-bold text-[#0288d1]">Đồ ăn</span>
+            <img class="mx-[10px]"
+                 src="https://img.icons8.com/ios-glyphs/16/6d6f71/arrow.png"
+            />
+            <div class="text-sm text-gray-600 max-w-[400px] overflow-hidden text-ellipsis whitespace-nowrap">
+              60 Hoàng Quốc Việt, Nghĩa Đô, Cầu Giấy, Hà Nội, Việt Nam
+            </div>
+          </a>
+
+          <img src="https://img.icons8.com/android/16/a5a700/forward.png"/>
+        </div>
+        <div [class]="isToggle ? 'bg-cyan-800' : 'bg-amber-100'"
+             class=" rounded-[4px] h-[1500px] mt-[20px] transition duration-1000"
+        >
+          <div (click)="item.show = !item.show"
+               *ngFor="let item of listCategory; index as index"
+               [class]="item.show ? 'checked' : ''"
+               class="switch relative inline-block w-[60px] h-[30px] overflow-hidden flex items-center
+               justify-between"
+          >
+            <input [(ngModel)]="item.show"
+                   [checked]="item.show"
+                   class="w-0 h-0 opacity-0"
+                   name="{{item.name}}"
+                   type="checkbox"
+            >
+            <span class="stem1 bg-white w-[20px] h-[20px]"
+            >
+              </span>
+            <span class="stem2 bg-white w-[20px] h-[20px]"
+                  style="--i: url('../../../../assets/light{{index+1}}.gif');"
+            >
+              </span>
+            <!--            <i class="select-none">{{item.show ? 'on' : 'off'}}</i>-->
+          </div>
+        </div>
+        <div class="bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 h-[1500px] mt-[20px]">
+          <div class="switch1 select-none" (click)="isToggle = !isToggle" [class]="isToggle ? '' : 'checked1'">
+            <input type="checkbox" class="hidden">
+            <div>
+              <span class="on">ON</span>
+              <span class="off">OFF</span>
+            </div>
+              <i></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="h-[2000px] w-1"></div>

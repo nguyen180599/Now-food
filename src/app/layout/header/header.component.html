@@ -1,0 +1,93 @@
+<div
+  class="w-screen h-[70px] bg-white flex justify-between items-center px-[50px] whitespace-nowrap shadow-[0_1px_10px_#ccc]">
+  <div class="flex w-[800px] items-center justify-between select-none">
+    <div class="mr-[10px] w-[150px]">
+      <a class="flex items-center" href="/">
+        <img alt="Now Food" class="mr-[10px]" src="./assets/logo.png">
+        <span class="tracking-wide font-bold text-[#0CA694] text-lg"></span>
+      </a>
+    </div>
+    <div class="relative">
+      <div (click)="isClickShowDistrict = true" class="w-fit p-[7px_15px] rounded-[7px] cursor-pointer
+           active:bg-gray-300 select-none bg-gray-200">
+        {{currentDistrict}}
+        <i class="fa-solid fa-caret-down ml-[15px] text-gray-700"></i>
+      </div>
+      <div [class]="isShowListDistrict ? 'block' : 'hidden'"
+           class="absolute top-[55px] w-[200px] border border-gray-300 rounded-[4px]
+           transition duration-200 bg-white"
+      >
+        <div (click)="changeDistrict(item)"
+             *ngFor="let item of listDistrict"
+             class="flex justify-between items-center text-sm leading-8 last:border-b-transparent
+             border-b border-b-gray-200 px-[10px] hover:bg-gray-100 select-none cursor-pointer"
+        >
+          {{item.name | titlecase}}
+          <span class="text-gray-400 text-xs">
+            {{item?.address}} địa điểm
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <ul class="list-none decoration-0 flex items-center h-[70px] select-none">
+        <li *ngFor="let menu of menuBar"
+            [class]="menuItemChosen === menu.id ? 'border-b-4 border-b-red-600' : ''"
+            class="hover:text-red-500 text-sm text-gray-700 h-full "
+        >
+          <a (click)="checkPage(menu)"
+             [class]="menuItemChosen === menu.id ? 'translate-y-[2px] font-bold text-red-600' : ''"
+             class="block w-full h-full flex items-center px-[10px]"
+             href="pages/{{menu.id}}"
+             routerLink="{{menu.id}}"
+          >
+            {{menu.name}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex items-center w-fit h-full">
+    <div class="w-[70px] h-full flex items-center">
+      <svg class="hover:fill-red-700 hover:scale-[1.2] fill-black transition duration-200 " height="30"
+           viewBox="0 0 50 50"
+           width="30" x="0px"
+           xmlns="http://www.w3.org/2000/svg"
+           y="0px">
+        <path
+          d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"></path>
+      </svg>
+    </div>
+    <div class="h-full flex items-center">
+      <div (click)="isClickShowUser = true"
+           class="text-gray-700 font-bold select-none cursor-pointer w-[150px] overflow-hidden text-ellipsis
+           whitespace-nowrap" title="{{currentUser.firstName}} {{currentUser.lastName}}">
+        {{currentUser.lastName}} {{currentUser.firstName}}
+      </div>
+      <div *ngIf="isShowUserDropDown" class="absolute top-[60px] bg-[#fffffa] right-[50px] w-[200px] border
+      border-gray-300 rounded-[3px]">
+        <div class="flex items-center cursor-pointer hover:bg-gray-100 p-[10px]">
+          <img class="mr-[10px]"
+               src="https://img.icons8.com/office/32/000000/test-account.png"
+          />
+          Thông tin cá nhân
+        </div>
+        <div class="flex items-center cursor-pointer hover:bg-gray-100 p-[10px]">
+          <img class="mr-[10px]"
+               src="https://img.icons8.com/color/32/000000/order-history.png"
+          />
+          Đơn hàng
+        </div>
+        <div (click)="logout()"
+             class="flex items-center font-bold text-red-500 hover:text-red-600 cursor-pointer
+             p-[10px] hover:bg-gray-100"
+        >
+          <img class="mr-[10px]"
+               src="https://img.icons8.com/cute-clipart/32/000000/exit.png"
+          />
+          Logout
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

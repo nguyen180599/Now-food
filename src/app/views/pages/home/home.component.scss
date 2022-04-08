@@ -1,0 +1,270 @@
+.switch {
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 2px 3px 5px #000;
+
+  span {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+
+    &.stem1 {
+      right: 30px;
+      background: url("../../../../assets/night.gif");
+      background-size: 60px 60px;
+      width: 15px;
+      height: 15px;
+      z-index: 100;
+      border-radius: 30px;
+      animation: off 1s;
+      box-shadow: inset 1px 2px 3px #ccc;
+    }
+
+    &.stem2 {
+      right: 0;
+      width: 60px;
+      height: 60px;
+      background: var(--i);
+      background-size: 60px 60px;
+      animation: on 1s;
+      z-index: 1;
+    }
+  }
+}
+
+.checked {
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+
+  span {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+
+    &.stem1 {
+      right: 0px;
+      background: url("../../../../assets/night.gif");
+      background-size: 60px 60px;
+      width: 60px;
+      height: 60px;
+      z-index: 1;
+      animation: onToggle 1s;
+    }
+
+    &.stem2 {
+      right: 15px;
+      width: 15px;
+      height: 15px;
+      box-shadow: 0 0 3px 1px #e1e1e1;
+      border-radius: 100%;
+      background: var(--i);
+      background-size: 15px 15px;
+      animation: offToggle 1s;
+      z-index: 100;
+    }
+  }
+}
+
+@keyframes on {
+  0% {
+    right: 0px;
+    border-radius: 30px;
+    width: 15px;
+    height: 15px;
+    z-index: 50;
+  }
+  50% {
+    right: 0;
+    border-radius: 0px;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+  }
+  100% {
+    right: 0;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@keyframes off {
+  0% {
+    right: 0;
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+  }
+  50% {
+    right: 30px;
+    border-radius: 60px;
+    width: 30px;
+    height: 30px;
+    z-index: 55;
+  }
+  100% {
+    right: 30px;
+    border-radius: 60px;
+    width: 15px;
+    height: 15px;
+    z-index: 101;
+  }
+}
+
+@keyframes onToggle {
+  0% {
+    right: 30px;
+    border-radius: 60px;
+    width: 15px;
+    height: 15px;
+    z-index: 40;
+  }
+  50% {
+    right: 0px;
+    border-radius: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+  }
+  100% {
+    right: 0;
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@keyframes offToggle {
+  0% {
+    right: 0;
+    border-radius: 60px;
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
+  }
+  50% {
+    right: 0;
+    border-radius: 60px;
+    width: 30px;
+    height: 30px;
+    z-index: 90;
+  }
+  100% {
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    border-radius: 60px;
+    z-index: 101;
+  }
+}
+
+
+.switch1 {
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 700;
+  border: 0.5px solid #eee;
+  background: linear-gradient(to bottom, #9e9e9e 30%, #eee);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  div {
+    width: 50px;
+    height: 20px;
+    background: linear-gradient(to bottom, #9e9e9e 30%, #f4f4f4);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    span {
+      position: absolute;
+      padding: 0 5px;
+      border-radius: 10px;
+      transition: opacity 1s, color 0.2s, width 0.2s;
+      top: 0.5px;
+      color: aliceblue;
+      display: flex;
+      align-items: center;
+
+      &.on {
+        width: 49px;
+        height: 19px;
+        left: 0.5px;
+        background: linear-gradient(#3b98fa, #1988fd 30%, #3b98fa);
+
+      }
+
+      &.off {
+        width: 0;
+        height: 19px;
+        right: 0.5px;
+        text-align: right;
+        opacity: 0;
+        justify-content: right;
+        background: #bbc6ce;
+        color: transparent;
+      }
+    }
+
+
+  }
+
+  i {
+    position: absolute;
+    left: 32px;
+    background: linear-gradient(to top, #9e9e9e 20%, #f4f4f4);
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    transition: 0.2s;
+
+    &:before {
+      content: '';
+      width: 21px;
+      height: 21px;
+      position: absolute;
+      top: 1.5px;
+      left: 1.5px;
+      border-radius: 100%;
+      background: #d5d4d4;
+    }
+  }
+}
+
+.checked1 {
+  span {
+    &.on {
+      width: 0 !important;
+      //height: 0 !important;
+      color: transparent !important;
+      opacity: 0 !important;
+    }
+
+    &.off {
+      width: 49px !important;
+      //height: 16px !important
+      color: aliceblue !important;
+      opacity: 1 !important;
+
+    }
+  }
+
+  i {
+    left: 3px;
+  }
+}
