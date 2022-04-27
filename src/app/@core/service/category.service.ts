@@ -21,4 +21,18 @@ export class CategoryService {
     return this.httpClient
       .get<any>(url1, this.httpOptions)
   }
+
+  getRestaurant(districtId: number, id?: number): Observable<any> {
+    const url = `${this.REST_API_SERVER}/restaurants`;
+    if (id) {
+      return this.httpClient.get<any>(`${url}/${id}`)
+    } else {
+      return this.httpClient.get<any>(`${url}?district_Id=${districtId}`)
+    }
+  }
+
+  getProduct(id?: number): Observable<any> {
+    const url = `${this.REST_API_SERVER}/restaurants`;
+    return this.httpClient.get<any>(`${url}?restaurant_Id=${id}`)
+  }
 }

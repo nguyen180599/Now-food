@@ -6,12 +6,14 @@ import {PagesComponent} from './pages.component';
 import {HomeComponent} from './home/home.component';
 import {HeaderComponent} from "../../layout/header/header.component";
 import {FormsModule} from "@angular/forms";
+import { AllRestaurantsComponent } from './home/all-restaurants/all-restaurants.component';
 
 @NgModule({
   declarations: [
     PagesComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    AllRestaurantsComponent
   ],
   imports: [
     CommonModule,

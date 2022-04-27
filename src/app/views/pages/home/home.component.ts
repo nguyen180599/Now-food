@@ -10,7 +10,7 @@ import {DistrictService} from "../../../@core/service/district.service";
 export class HomeComponent implements OnInit, AfterViewInit {
 
   @ViewChild('viewheight', {read: ElementRef}) viewHeight!: ElementRef
-  @ViewChild('home', {read: ElementRef}) home!: ElementRef
+  // @ViewChild('home', {read: ElementRef}) home!: ElementRef
   listCategory!: any[];
   currentDistrict: any;
   menuHeight!: number;

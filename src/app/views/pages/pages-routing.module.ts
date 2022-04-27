@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '1',
+        redirectTo: 'food',
         pathMatch: 'full'
       }
     ]

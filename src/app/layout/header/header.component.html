@@ -39,9 +39,14 @@
              [class]="menuItemChosen === menu.id ? 'translate-y-[2px] font-bold text-red-600' : ''"
              class="block w-full h-full flex items-center px-[10px]"
              href="pages/{{menu.id}}"
-             routerLink="{{menu.id}}"
+             routerLink="{{menu.path}}"
           >
             {{menu.name}}
+          </a>
+        </li>
+        <li>
+          <a routerLink="abc" click="">
+            do chay
           </a>
         </li>
       </ul>

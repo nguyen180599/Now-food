@@ -18,13 +18,13 @@ export class HeaderComponent implements OnInit {
   isShowUserDropDown = false;
   isClickShowUser = false;
   menuBar = [
-    {id: 1, name: "Đồ ăn", path: "#"},
-    {id: 2, name: "Thực phẩm", path: "#"},
-    {id: 3, name: "Bia", path: "#"},
-    {id: 4, name: "Hoa", path: "#"},
-    {id: 5, name: "Siêu thị", path: "#"},
-    {id: 6, name: "Thuốc", path: "#"},
-    {id: 7, name: "Thú cưng", path: "#"},
+    {id: 1, name: "Đồ ăn", path: "food"},
+    {id: 2, name: "Thực phẩm", path: "fresh"},
+    {id: 3, name: "Bia", path: "liquor"},
+    {id: 4, name: "Hoa", path: "flowers"},
+    {id: 5, name: "Siêu thị", path: "fmcg"},
+    {id: 6, name: "Thuốc", path: "medicine"},
+    {id: 7, name: "Thú cưng", path: "pets"},
   ]
   menuItemChosen = 1;
 

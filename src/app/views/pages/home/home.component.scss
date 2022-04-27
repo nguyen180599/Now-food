@@ -169,102 +169,34 @@
 
 
 .switch1 {
-  width: 60px;
-  height: 30px;
-  border-radius: 15px;
-  font-size: 10px;
-  font-weight: 700;
-  border: 0.5px solid #eee;
-  background: linear-gradient(to bottom, #9e9e9e 30%, #eee);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 24px;
+  height: 9px;
+  border: 1.5px solid #5CB85C;
+  border-radius: 9px;
+  background: #fff;
   position: relative;
-
-  div {
-    width: 50px;
-    height: 20px;
-    background: linear-gradient(to bottom, #9e9e9e 30%, #f4f4f4);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-
-    span {
-      position: absolute;
-      padding: 0 5px;
-      border-radius: 10px;
-      transition: opacity 1s, color 0.2s, width 0.2s;
-      top: 0.5px;
-      color: aliceblue;
-      display: flex;
-      align-items: center;
-
-      &.on {
-        width: 49px;
-        height: 19px;
-        left: 0.5px;
-        background: linear-gradient(#3b98fa, #1988fd 30%, #3b98fa);
-
-      }
-
-      &.off {
-        width: 0;
-        height: 19px;
-        right: 0.5px;
-        text-align: right;
-        opacity: 0;
-        justify-content: right;
-        background: #bbc6ce;
-        color: transparent;
-      }
-    }
-
-
-  }
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
 
   i {
     position: absolute;
-    left: 32px;
-    background: linear-gradient(to top, #9e9e9e 20%, #f4f4f4);
-    width: 24px;
-    height: 24px;
+    left: 11px;
+    background: #5CB85C;
+    // border: 1px solid #777E90;
+    width: 15px;
+    height: 15px;
     border-radius: 100%;
     transition: 0.2s;
-
-    &:before {
-      content: '';
-      width: 21px;
-      height: 21px;
-      position: absolute;
-      top: 1.5px;
-      left: 1.5px;
-      border-radius: 100%;
-      background: #d5d4d4;
-    }
   }
 }
 
 .checked1 {
-  span {
-    &.on {
-      width: 0 !important;
-      //height: 0 !important;
-      color: transparent !important;
-      opacity: 0 !important;
-    }
-
-    &.off {
-      width: 49px !important;
-      //height: 16px !important
-      color: aliceblue !important;
-      opacity: 1 !important;
-
-    }
-  }
-
+  background: #777e90;
+  border: 0;
   i {
-    left: 3px;
+    left: -1px;
+    background: #fff;
+    border: 1px solid #777e90;
   }
 }
